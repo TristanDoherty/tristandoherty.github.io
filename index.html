@@ -35,17 +35,18 @@ var video_out = document.getElementById("vid-box");
 
 
 function login(form) {
-	alert("called!")
+	alert("called!");
 	var phone = window.phone = PHONE({
 	    number        : form.username.value || "Anonymous", // listen on username line else Anonymous
 	    publish_key   : 'pub-c-39fe0f3e-48d6-402b-8c61-2e4511ce1ac7',
 	    subscribe_key : 'sub-c-4d1d8bc6-bbd2-11e5-8a35-0619f8945a4f',
 	});	
-	phone.ready(function(){ form.username.style.background="#55ff5b"; });
+	phone.ready(function(){alert("ready!"); form.username.style.background="#55ff5b"; });
 	phone.receive(function(session){
 	    session.connected(function(session) { video_out.appendChild(session.video); });
 	    session.ended(function(session) { video_out.innerHTML=''; });
 	});
+	alert("done!")
 	return false; 	// So the form does not submit.
 }
 
