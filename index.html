@@ -35,6 +35,7 @@ var video_out = document.getElementById("vid-box");
 
 
 function login(form) {
+	alert("called!")
 	var phone = window.phone = PHONE({
 	    number        : form.username.value || "Anonymous", // listen on username line else Anonymous
 	    publish_key   : 'pub-c-39fe0f3e-48d6-402b-8c61-2e4511ce1ac7',
